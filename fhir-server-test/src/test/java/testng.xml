@@ -1,3 +1,4 @@
+<!DOCTYPE suite SYSTEM "src/test/java/testng-1.0.dtd" >
 <suite name="FHIRServerIntegrationTests">  
     <test name="ExampleTest">
         <classes>
