@@ -22,7 +22,7 @@ jobs:
         mvn install --file fhir-parent/pom.xml
     - name: Server Integration Tests
       env:
-        WORKSPACE: ${GITHUB_WORKSPACE}
+        WORKSPACE: /home/runner/work/FHIR/FHIR
       run: |
         echo "Using workspace directory: ${WORKSPACE}"
         build/pre-integration-test.sh
