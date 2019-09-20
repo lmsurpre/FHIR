@@ -62,10 +62,16 @@
         <module>../fhir-coverage-reports</module>
     </modules>
 
-    <!-- This section "enforces" that we're using consistent versions of 
+    <!-- This section "enforces" that we're using consistent versions of
         artifacts within our modules -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>fhir-examples</artifactId>
+                <version>1.0.1</version>
+                <scope>test</scope>
+            </dependency>
             <dependency>
                 <groupId>jakarta.servlet</groupId>
                 <artifactId>jakarta.servlet-api</artifactId>
@@ -616,4 +622,18 @@
             </properties>
         </profile>
     </profiles>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>github</id>
+            <name>GitHub lmsurpre Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/lmsurpre</url>
+        </repository>
+    </repositories>
 </project>
