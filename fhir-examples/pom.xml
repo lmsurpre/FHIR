@@ -32,4 +32,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+       <repository>
+         <id>github</id>
+         <name>GitHub lmsurpre Apache Maven Packages</name>
+         <url>https://maven.pkg.github.com/lmsurpre</url>
+       </repository>
+    </distributionManagement>
 </project>
