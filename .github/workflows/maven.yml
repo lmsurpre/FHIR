@@ -18,6 +18,8 @@ jobs:
     - name: Build with Maven
       run: mvn package --file fhir-parent/pom.xml
     - name: Server Integration Tests
+      env:
+        WORKSPACE: .
       run: |
         build/pre-integration-test.sh
         mvn test -DskipTests=false -f fhir-server-test/pom.xml
