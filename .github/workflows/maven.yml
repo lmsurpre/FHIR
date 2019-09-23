@@ -19,11 +19,10 @@ jobs:
       run: |
         mkdir ~/.m2
         echo "<settings><servers><server><id>github</id><username>lmsurpre</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
-        mvn install --file fhir-parent/pom.xml
+        mvn -T2C install --file fhir-parent/pom.xml
     - name: Server Integration Tests
-      env:
-        WORKSPACE: /home/runner/work/FHIR/FHIR
       run: |
+        export WORKSPACE=${GITHUB_WORKSPACE}
         echo "Using workspace directory: ${WORKSPACE}"
         build/pre-integration-test.sh
         mvn test -DskipTests=false -f fhir-server-test/pom.xml
