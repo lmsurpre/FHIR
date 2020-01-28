@@ -22,6 +22,5 @@ cp ../src/test/resources/fhir-server-config-db2.json $DIST/config/default/fhir-s
 
 echo "Copying db2 schema tool..."
 cp -pr ../../fhir-persistence-schema/target/fhir-persistence-schema-*-cli.jar $SCHEMA
-cp ../src/test/resources/db2.properties $SCHEMA
 
 echo "Finished copying fhir-server dependencies..."
